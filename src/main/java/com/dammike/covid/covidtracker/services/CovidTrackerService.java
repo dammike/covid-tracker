@@ -37,6 +37,9 @@ public class CovidTrackerService {
             stats = new CountryStats();
             stats.setState(record.get("Province/State"));
             stats.setCountry(record.get("Country/Region"));
+            stats.setYesterdayOnlyAmt(Integer.parseInt(record.get(record.size() - 1))
+                    - Integer.parseInt(record.get(record.size() - 2)));
+            stats.setTotalInfectedAmt(Integer.parseInt(record.get(record.size() - 1)));
             countries.add(stats);
             allData = countries;
         }

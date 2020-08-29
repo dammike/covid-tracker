@@ -15,5 +15,4 @@ class CovidTrackerApplicationTests {
 		CovidTrackerService service = new CovidTrackerService();
 		Assert.notNull(service.getAllData(), "CSV data loaded successfully!");
 	}
-
 }
