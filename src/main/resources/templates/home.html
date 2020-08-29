@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<table>
+    <tr>
+        <th>STATE</th>
+        <th>COUNTRY</th>
+        <th>TOTAL INFECTED</th>
+        <th>LAST 24Hrs</th>
+    </tr>
+    <tr th:each="stats : ${allStats}">
+        <td th:text="${stats.getState()}"></td>
+        <td th:text="${stats.getCountry()}"></td>
+        <td th:text="${stats.getTotalInfectedAmt()}">0</td>
+        <td th:text="${stats.getYesterdayOnlyAmt()}">0</td>
+    </tr>
+</table>
+
+</body>
+
+</html>

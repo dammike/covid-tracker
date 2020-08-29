@@ -3,12 +3,13 @@ package com.dammike.covid.covidtracker.model;
 public class CountryStats {
     private String state;
     private String country;
-    private int infectedAmt;
+    private int totalInfectedAmt;
+    private int yesterdayOnlyAmt;
 
-    public CountryStats(String state, String country, int infectedAmt) {
+    public CountryStats(String state, String country, int totalInfectedAmt) {
         this.state = state;
         this.country = country;
-        this.infectedAmt = infectedAmt;
+        this.totalInfectedAmt = totalInfectedAmt;
     }
 
     public CountryStats() {
@@ -30,12 +31,20 @@ public class CountryStats {
         this.country = country;
     }
 
-    public int getInfectedAmt() {
-        return infectedAmt;
+    public int getTotalInfectedAmt() {
+        return totalInfectedAmt;
     }
 
-    public void setInfectedAmt(int infectedAmt) {
-        this.infectedAmt = infectedAmt;
+    public void setTotalInfectedAmt(int totalInfectedAmt) {
+        this.totalInfectedAmt = totalInfectedAmt;
+    }
+
+    public int getYesterdayOnlyAmt() {
+        return yesterdayOnlyAmt;
+    }
+
+    public void setYesterdayOnlyAmt(int yesterdayOnlyAmt) {
+        this.yesterdayOnlyAmt = yesterdayOnlyAmt;
     }
 
     @Override
@@ -43,7 +52,8 @@ public class CountryStats {
         return "CountryStats{" +
                 "state='" + state + '\'' +
                 ", country='" + country + '\'' +
-                ", infectedAmt=" + infectedAmt +
+                ", totalInfectedAmt=" + totalInfectedAmt +
+                ", yesterdayOnlyAmt=" + yesterdayOnlyAmt +
                 '}';
     }
 }
